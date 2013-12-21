@@ -6,15 +6,15 @@
   "directories": {
     "test": "test"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "dup": "~0.0.0",
     "ndarray": "~1.0.9",
     "ndarray-ops": "~1.1.1",
     "tape": "~2.3.2",
     "zeros": "~0.0.0",
-    "tap": "~0.4.6"
+    "tap": "~0.4.6",
+    "numeric": "~1.2.6"
   },
   "scripts": {
     "test": "tap test/*.js"
@@ -24,7 +24,7 @@
     "url": "git://github.com/mikolalysenko/ndgemm.git"
   },
   "keywords": [
-    "Matrix",
+    "matrix",
     "multiply",
     "ndarray",
     "blas",
