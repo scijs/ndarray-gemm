@@ -86,8 +86,12 @@ tape("m-r-c g", function(t) {
   t.end()
 })
 
+tape("m-r-r g", function(t) {
+  runTest(t, dup([3,3]), genr(3,3), genr(3,3))
+  t.end()
+})
 
-/*
+
 tape("r-r-r g", function(t) {
   runTest(t, genr(3,3), genr(3,3), genr(3,3))
   t.end()
@@ -97,9 +101,7 @@ tape("r-r-c g", function(t) {
   runTest(t, genr(3,3), genr(3,3), genr(3,3).transpose(1,0))
   t.end()
 })
-*/
 
-/*
 tape("r-c-r g", function(t) {
   runTest(t, genr(3,3), genr(3,3).transpose(1,0), genr(3,3))
   t.end()
@@ -109,16 +111,12 @@ tape("r-r-r", function(t) {
   runTest(t, zeros([3, 3]), zeros([3,3]), zeros([3,3]))
   t.end()
 })
-*/
 
-/*
 tape("r-r-c", function(t) {
   runTest(t, zeros([3, 3]), zeros([3,3]), zeros([3,3]).transpose(1,0))
   t.end()
 })
-*/
 
-/*
 tape("r-r-m", function(t) {
   runTest(t, zeros([3, 3]), zeros([3,3]), dup([3,3]))
   t.end()
@@ -143,7 +141,6 @@ tape("r-m-r", function(t) {
   runTest(t, zeros([3, 3]), dup([3,3]), zeros([3,3]))
   t.end()
 })
-*/
 
 tape("r-m-c", function(t) {
   runTest(t, zeros([3, 3]), dup([3,3]), zeros([3,3]).transpose(1,0))
@@ -154,6 +151,7 @@ tape("r-m-m", function(t) {
   runTest(t, zeros([3, 3]), dup([3,3]), dup([3,3]))
   t.end()
 })
+*/
 
 tape("c-r-r", function(t) {
   runTest(t, zeros([3, 3]).transpose(1,0), zeros([3,3]), zeros([3,3]))
