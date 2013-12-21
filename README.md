@@ -4,15 +4,12 @@ ndgemm
 
 WORK IN PROGRESS
 
-## Ideas: 
-
-* Maybe incorporate all the BLAS levels into one library, so interface is simpler
-* For example, could detect situation where arguments are lower dimensional and call out to `ndarray-matrix-vector-multiply`
-
 # Example
 
 ```javascript
-//TODO
+var zeros = require("zeros")
+
+
 ```
 
 # Install

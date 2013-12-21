@@ -21,7 +21,7 @@ function checkShapes(out, a, b) {
   }
 }
 
-function classifyShape(m) {
+function classifyType(m) {
   if(Array.isArray(m)) {
     if(Array.isArray(m)) {
       return [ "r", "native" ]
