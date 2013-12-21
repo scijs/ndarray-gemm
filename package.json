@@ -1,0 +1,49 @@
+{
+  "name": "ndgemm",
+  "version": "0.0.0",
+  "description": "Matrix multiplication for ndarrays",
+  "main": "gemm.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "dup": "~0.0.0",
+    "ndarray": "~1.0.9",
+    "ndarray-ops": "~1.1.1",
+    "tape": "~2.3.2",
+    "zeros": "~0.0.0",
+    "tap": "~0.4.6"
+  },
+  "scripts": {
+    "test": "tap test/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mikolalysenko/ndgemm.git"
+  },
+  "keywords": [
+    "Matrix",
+    "multiply",
+    "ndarray",
+    "blas",
+    "level",
+    "3",
+    "general",
+    "vector",
+    "outer",
+    "inner",
+    "product",
+    "linear",
+    "algebra",
+    "numerical",
+    "methods"
+  ],
+  "author": "Mikola Lysenko",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mikolalysenko/ndgemm/issues"
+  },
+  "homepage": "https://github.com/mikolalysenko/ndgemm"
+}
