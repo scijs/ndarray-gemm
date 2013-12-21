@@ -13,7 +13,15 @@ function runTest(t, out, a, b) {
     for(var j=0; j<3; ++j) {
       for(var k=0; k<3; ++k) {
         for(var l=0; l<3; ++l) {
-          ops.assigns(out, 1.0)
+          if(Array.isArray(out)) {
+            for(var n=0; n<3; ++n) {
+              for(var m=0; m<3; ++m) {
+                out[n][m] = 1.0
+              }
+            }
+          } else {
+            ops.assigns(out, 1.0)
+          }
 
           if(Array.isArray(a)) {
             for(var n=0; n<3; ++n) {
@@ -41,10 +49,19 @@ function runTest(t, out, a, b) {
 
           gemm(out, a, b, 0.25, 0.5)
 
-          for(var r=0; r<3; ++r) {
-            for(var c=0; c<3; ++c) {
-              t.equals(out.get(r,c), j === k && r === i && c === l ? 0.75 : 0.5, 
-                "(" + r + "," + c + ") - (" + i + "," + j + ") x (" + k + "," + l + ")")
+          if(Array.isArray(out)) {
+            for(var r=0; r<3; ++r) {
+              for(var c=0; c<3; ++c) {
+                t.equals(out[r][c], j === k && r === i && c === l ? 0.75 : 0.5, 
+                  "(" + r + "," + c + ") - (" + i + "," + j + ") x (" + k + "," + l + ")")
+              }
+            }
+          } else {
+            for(var r=0; r<3; ++r) {
+              for(var c=0; c<3; ++c) {
+                t.equals(out.get(r,c), j === k && r === i && c === l ? 0.75 : 0.5, 
+                  "(" + r + "," + c + ") - (" + i + "," + j + ") x (" + k + "," + l + ")")
+              }
             }
           }
         }
@@ -63,6 +80,12 @@ function Generic(n) {
 function genr(r, c)  {
   return ndarray(new Generic(r*c), [r,c])
 }
+
+tape("m-r-c g", function(t) {
+  runTest(t, dup([3,3]), genr(3,3), genr(3,3).transpose(1,0))
+  t.end()
+})
+
 
 /*
 tape("r-r-r g", function(t) {
