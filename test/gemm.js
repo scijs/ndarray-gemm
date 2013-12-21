@@ -151,7 +151,6 @@ tape("r-m-m", function(t) {
   runTest(t, zeros([3, 3]), dup([3,3]), dup([3,3]))
   t.end()
 })
-*/
 
 tape("c-r-r", function(t) {
   runTest(t, zeros([3, 3]).transpose(1,0), zeros([3,3]), zeros([3,3]))
