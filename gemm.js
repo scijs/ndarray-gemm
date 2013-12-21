@@ -6,7 +6,7 @@ var generatePlan = require("./lib/planner.js")
 
 function shape(arr) {
   if(Array.isArray(arr)) {
-    return [ array.length, array[0].length ]
+    return [ arr.length, arr[0].length ]
   } else {
     return arr.shape
   }
