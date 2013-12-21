@@ -2,6 +2,8 @@ ndgemm
 ======
 [General matrix multiply](http://en.wikipedia.org/wiki/General_Matrix_Multiply) for [ndarrays](https://github.com/mikolalysenko/ndarray).  This is analogous to the [BLAS level 3](http://en.wikipedia.org/wiki/Basic_Linear_Algebra_Subprograms) routine xGEMM.
 
+Note that while this implementation is correct, it is not yet very optimized.  If someone wants to take over this project or suggest improvements, patches are welcome.
+
 # Example
 
 ```javascript
