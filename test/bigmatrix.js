@@ -15,17 +15,23 @@ tape("big-matrix", function(t) {
   ops.random(b)
   ops.random(c)
 
-  gemm(c, a, b)
+  gemm(c, a, b);
 
-  for(var i=0; i<c.shape[0]; ++i) {
-    for(var j=0; j<c.shape[1]; ++j) {
-      var r = 0.0
-      for(var k=0; k<a.shape[1]; ++k) {
-        r += a.get(i,k) * b.get(k,j)
+  (function() {
+    for(var i=0; i<c.shape[0]; ++i) {
+      for(var j=0; j<c.shape[1]; ++j) {
+        var r = 0.0
+        for(var k=0; k<a.shape[1]; ++k) {
+          r += a.get(i,k) * b.get(k,j)
+        }
+        if (!(Math.abs(r - c.get(i,j)) < 1e-6)) {
+          t.fail("Checking big product. expect: " + r + " got: " + c.get(i,j))
+          return
+        }
       }
-      t.ok(Math.abs(r - c.get(i,j)) < 1e-6, "Checking big product. expect: " + r + " got: " + c.get(i,j))
     }
-  }
+    t.pass()
+  })()
 
   t.end()
 })
@@ -39,17 +45,23 @@ tape("big-matrix-row-column", function(t) {
   ops.random(b)
   ops.random(c)
 
-  gemm(c, a, b)
+  gemm(c, a, b);
 
-  for(var i=0; i<c.shape[0]; ++i) {
-    for(var j=0; j<c.shape[1]; ++j) {
-      var r = 0.0
-      for(var k=0; k<a.shape[1]; ++k) {
-        r += a.get(i,k) * b.get(k,j)
+  (function() {
+    for(var i=0; i<c.shape[0]; ++i) {
+      for(var j=0; j<c.shape[1]; ++j) {
+        var r = 0.0
+        for(var k=0; k<a.shape[1]; ++k) {
+          r += a.get(i,k) * b.get(k,j)
+        }
+        if (!(Math.abs(r - c.get(i,j)) < 1e-6)) {
+          t.fail("Checking big product. expect: " + r + " got: " + c.get(i,j))
+          return
+        }
       }
-      t.ok(Math.abs(r - c.get(i,j)) < 1e-6, "Checking big product. expect: " + r + " got: " + c.get(i,j))
     }
-  }
+    t.pass()
+  })()
 
   t.end()
 })

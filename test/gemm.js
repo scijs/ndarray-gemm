@@ -52,15 +52,19 @@ function runTest(t, out, a, b) {
           if(Array.isArray(out)) {
             for(var r=0; r<3; ++r) {
               for(var c=0; c<3; ++c) {
-                t.equals(out[r][c], j === k && r === i && c === l ? 0.75 : 0.5, 
-                  "(" + r + "," + c + ") - (" + i + "," + j + ") x (" + k + "," + l + ")")
+                if (out[r][c]!==(j === k && r === i && c === l ? 0.75 : 0.5)) {
+                  t.fail("(" + r + "," + c + ") - (" + i + "," + j + ") x (" + k + "," + l + ")")
+                  return
+                }
               }
             }
           } else {
             for(var r=0; r<3; ++r) {
               for(var c=0; c<3; ++c) {
-                t.equals(out.get(r,c), j === k && r === i && c === l ? 0.75 : 0.5, 
-                  "(" + r + "," + c + ") - (" + i + "," + j + ") x (" + k + "," + l + ")")
+                if (out.get(r,c)!==(j === k && r === i && c === l ? 0.75 : 0.5)) {
+                  t.fail("(" + r + "," + c + ") - (" + i + "," + j + ") x (" + k + "," + l + ")")
+                  return
+                }
               }
             }
           }
@@ -68,6 +72,7 @@ function runTest(t, out, a, b) {
       }
     }
   }
+  t.pass()
 }
 
 function Generic(n) {
