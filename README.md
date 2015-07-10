@@ -4,7 +4,9 @@ ndgemm
 
 Note that while this implementation is correct, it is not yet very optimized.  If someone wants to take over this project or suggest improvements, patches are welcome.
 
-# Example
+[![build status](https://secure.travis-ci.org/scijs/ndgemm.png)](http://travis-ci.org/scijs/ndgemm)
+
+## Example
 
 ```javascript
 var zeros = require("zeros")
@@ -24,13 +26,14 @@ ops.random(c)
 gemm(c, a, b)
 ```
 
-# Install
+## Install
+Install using [npm](https://www.npmjs.com/):
 
     npm install ndgemm
 
-# API
+## API
 
-### `require("ndgemm")(c, a, b[, alpha, beta])`
+#### `require("ndgemm")(c, a, b[, alpha, beta])`
 Computes a generalized matrix multiplication.  This sets:
 
 ```javascript
@@ -43,5 +46,5 @@ c = alpha * a * b + beta * c
 * `alpha` is a scalar weight which is applied to the product `a * b`
 * `beta` is a scalar weight applied to `c` when added back in
 
-## Credits
+## License
 (c) 2013 Mikola Lysenko. MIT License
