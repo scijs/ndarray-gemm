@@ -1,17 +1,17 @@
-ndgemm
+ndarray-gemm
 ======
 [General matrix multiply](http://en.wikipedia.org/wiki/General_Matrix_Multiply) for [ndarrays](https://github.com/mikolalysenko/ndarray).  This is analogous to the [BLAS level 3](http://en.wikipedia.org/wiki/Basic_Linear_Algebra_Subprograms) routine xGEMM.
 
 Note that while this implementation is correct, it is not yet very optimized.  If someone wants to take over this project or suggest improvements, patches are welcome.
 
-[![build status](https://secure.travis-ci.org/scijs/ndgemm.png)](http://travis-ci.org/scijs/ndgemm)
+[![build status](https://secure.travis-ci.org/scijs/ndarray-gemm.png)](http://travis-ci.org/scijs/ndarray-gemm)
 
 ## Example
 
 ```javascript
 var zeros = require("zeros")
 var ops = require("ndarray-ops")
-var gemm = require("ndgemm")
+var gemm = require("ndarray-gemm")
 
 //Create 3 random matrices
 var a = zeros([300, 400]) // a is 300 x 400
@@ -29,11 +29,11 @@ gemm(c, a, b)
 ## Install
 Install using [npm](https://www.npmjs.com/):
 
-    npm install ndgemm
+    npm install ndarray-gemm
 
 ## API
 
-#### `require("ndgemm")(c, a, b[, alpha, beta])`
+#### `require("ndarray-gemm")(c, a, b[, alpha, beta])`
 Computes a generalized matrix multiplication.  This sets:
 
 ```javascript

@@ -1,5 +1,5 @@
 {
-  "name": "ndgemm",
+  "name": "ndarray-gemm",
   "version": "1.0.0",
   "description": "Matrix multiplication for ndarrays",
   "main": "gemm.js",
@@ -20,7 +20,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/scijs/ndgemm.git"
+    "url": "git://github.com/scijs/ndarray-gemm.git"
   },
   "keywords": [
     "scijs",
@@ -43,6 +43,6 @@
   "author": "Mikola Lysenko",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/scijs/ndgemm/issues"
+    "url": "https://github.com/scijs/ndarray-gemm/issues"
   }
 }
